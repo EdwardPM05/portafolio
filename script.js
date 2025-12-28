@@ -18,10 +18,8 @@ btn.addEventListener('click', function() {
     
     if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
-        btn.innerHTML = '<i class="fas fa-bars"></i>';
     } else {
         navLinks.classList.add('active');
-        btn.innerHTML = '<i class="fas fa-times"></i>';
     }
 });
 
@@ -29,17 +27,7 @@ btn.addEventListener('click', function() {
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         document.querySelector('.nav-links').classList.remove('active');
-        btn.innerHTML = '<i class="fas fa-bars"></i>';
     });
-});
-
-/* ===== Close menu when clicking outside ===== */
-document.addEventListener('click', (e) => {
-    const navLinks = document.querySelector('.nav-links');
-    if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        btn.innerHTML = '<i class="fas fa-bars"></i>';
-    }
 });
 
 /* ===== Active section in navigation ===== */
@@ -99,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const nextBtn = carousel.querySelector('.next');
         const indicators = carousel.querySelectorAll('.indicator');
         let currentSlide = 0;
-        let autoplayInterval;
 
         function showSlide(index) {
             // Remover active de todos los slides e indicadores
@@ -111,41 +98,18 @@ document.addEventListener('DOMContentLoaded', function() {
             indicators[index].classList.add('active');
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
-            showSlide(currentSlide);
-        }
-
-        function resetAutoplay() {
-            if (autoplayInterval) {
-                clearInterval(autoplayInterval);
-            }
-            startAutoplay();
-        }
-
-        function startAutoplay() {
-            autoplayInterval = setInterval(() => {
-                nextSlide();
-            }, 5000);
-        }
-
         // Botón anterior
         prevBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            prevSlide();
-            resetAutoplay();
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+            showSlide(currentSlide);
         });
 
         // Botón siguiente
         nextBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            nextSlide();
-            resetAutoplay();
+            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            showSlide(currentSlide);
         });
 
         // Click en indicadores
@@ -154,57 +118,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 currentSlide = index;
                 showSlide(currentSlide);
-                resetAutoplay();
             });
         });
 
-        // Pausar autoplay cuando el mouse está sobre el carrusel
-        carousel.addEventListener('mouseenter', () => {
-            if (autoplayInterval) {
-                clearInterval(autoplayInterval);
-            }
-        });
-
-        // Reanudar autoplay cuando el mouse sale del carrusel
-        carousel.addEventListener('mouseleave', () => {
-            startAutoplay();
-        });
-
-        // Soporte para gestos táctiles (swipe) en móviles
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        carousel.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    // Swipe izquierda - siguiente
-                    nextSlide();
-                } else {
-                    // Swipe derecha - anterior
-                    prevSlide();
-                }
-                resetAutoplay();
-            }
-        }
-
-        // Iniciar autoplay
-        startAutoplay();
+        // Auto-play opcional (descomenta si lo quieres)
+        /*
+        setInterval(() => {
+            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            showSlide(currentSlide);
+        }, 5000);
+        */
     });
 });
 
-/* ===== FORM SUBMISSION ===== */
+// ==================== FORM SUBMISSION ====================
 const contactForm = document.querySelector('.contact-form');
 
 if (contactForm) {
@@ -225,53 +152,3 @@ if (contactForm) {
         localStorage.removeItem('formSubmitted');
     }
 }
-
-/* ===== ANIMACIONES AL HACER SCROLL ===== */
-// Observador para animaciones cuando los elementos entran en viewport
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Aplicar animación a las tarjetas de proyectos y habilidades
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.project-card, .cards--habilidades');
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-});
-
-/* ===== PREVENIR ZOOM EN INPUTS EN iOS ===== */
-const inputs = document.querySelectorAll('input, textarea');
-inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-        const viewport = document.querySelector('meta[name=viewport]');
-        if (viewport) {
-            viewport.setAttribute('content', 
-                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
-            );
-        }
-    });
-    
-    input.addEventListener('blur', () => {
-        const viewport = document.querySelector('meta[name=viewport]');
-        if (viewport) {
-            viewport.setAttribute('content', 
-                'width=device-width, initial-scale=1.0'
-            );
-        }
-    });
-});
