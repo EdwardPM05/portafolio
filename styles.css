@@ -709,6 +709,8 @@ footer p {
     height: 300px;
     overflow: hidden;
     border-radius: 20px 20px 0 0;
+    /* Agregamos un fondo oscuro por si la imagen no ocupa todo el ancho */
+    background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%); 
 }
 
 .carousel-slide {
@@ -719,6 +721,10 @@ footer p {
     height: 100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    /* Centramos la imagen perfectamente en el contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-slide.active {
@@ -728,7 +734,9 @@ footer p {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* CAMBIO CLAVE: Muestra la imagen completa sin deformar ni recortar texto */
+    object-fit: contain; 
+    object-position: center;
 }
 
 .carousel-btn {
