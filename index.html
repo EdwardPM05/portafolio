@@ -14,7 +14,6 @@
             <div class="logo">EP</div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Inicio</a></li>
-                <li><a href="#about">Sobre Mí</a></li>
                 <li><a href="#skills">Habilidades</a></li>
                 <li><a href="#projects">Proyectos</a></li>
                 <li><a href="#contact">Contacto</a></li>
@@ -35,7 +34,7 @@
                     <a href="#contact" class="btn btn-primary">
                         <i class="fas fa-envelope"></i> Contáctame
                     </a>
-                    <a href="CV/Edward Pittman - CV.pdf" download="Edward Pittman - CV.pdf" class="btn btn-secondary">
+                    <a href="CV/Edward Pittman - CV.pdf" download="Edward Pittman - CV.pdf" target="_blank" class="btn btn-secondary">
                         <i class="fas fa-download"></i> Descargar CV
                     </a>
                 </div>
@@ -66,31 +65,6 @@
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN SOBRE MÍ -->
-    <section class="about" id="about">
-        <div class="section-title">
-            <h1>Sobre <span class="highlight">Mí</span></h1>
-        </div>
-
-        <div class="container_content-sobreMi">
-            <div class="container_texto-sobreMi">
-                <span class="title_sobreMi">Edward Pittman</span>
-                <span class="texto_sobreMi">
-                    Estudiante de 7mo ciclo de Ingeniería de Software | Analista Programador Certificado | Desarrollador Freelance
-                    <br><br>
-                    Entre mis proyectos destacados se encuentran el desarrollo de un Sistema de Gestión (ERP) para el sector retail de motocicletas, optimizando procesos de inventario y ventas; la creación de una aplicación móvil orientada al impacto social para el rescate de animales en situación de calle, entre otros mas. Mi enfoque combina el rigor técnico con la capacidad de transformar necesidades de negocio en software escalable, eficiente y centrado en la experiencia del usuario.
-                    <br><br>
-                    Soy una persona proactiva, responsable y con gran capacidad de trabajo en equipo. Me apasiona aprender continuamente y enfrentar nuevos desafíos en el mundo del desarrollo de software.
-                </span>
-            </div>
-
-            <picture class="container_image-sobreMi">
-                <img class="image_sobreMi" src="images/prog.png" alt="Edward Pittman trabajando">
-            </picture>
-        </div>
-    </section>
-
-    <!-- NUEVA SECCIÓN HABILIDADES -->
     <section class="skills" id="skills">
         <div class="section-title">
             <h1>Mis <span class="highlight">Habilidades</span></h1>
@@ -208,6 +182,21 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="IntelliJ">
                 <p>IntelliJ</p>
             </div>
+
+            <div class="cards--habilidades">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity">
+                <p>Unity</p>
+            </div>
+
+            <div class="cards--habilidades">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio">
+                <p>Android S.</p>
+            </div>
+
+            <div class="cards--habilidades">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="ExoPlayer">
+                <p>ExoPlayer</p>
+            </div>
         </div>
     </section>
 
@@ -217,7 +206,46 @@
             <p>Algunos de mis trabajos más recientes</p>
         </div>
         <div class="projects-grid">
-            <!-- Proyecto 1: ERP GESTOR -->
+  
+            <div class="project-card">
+                <div class="card-carousel">
+                    <div class="carousel-slide active">
+                        <img src="images/projects/simatv1.png" alt="SIMATV - Vista 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/projects/simatv2.png" alt="SIMATV - Vista 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/projects/simatv3.png" alt="SIMATV  - Vista 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/projects/simatv4.png" alt="SIMATV - Vista 4">
+                    </div>
+                    <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>APP IPTV - SIMATV</h3>
+                    <p>Aplicación de IPTV Streaming para Smart TVs con cabecera de televisión (Headend) propia. 
+                        Implementa ingesta y procesamiento de señales satelitales en vivo (nacional e internacional) 
+                        optimizadas para servidores Linux, con sistema de autenticación y acceso premium, 
+                        DESARROLLADO PARA EMPRESA DE TELECOMUNICACIONES SIMA.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Kotlin</span>
+                        <span class="tech-badge">Exoplayer</span>
+                        <span class="tech-badge">IPTV / Live TV</span>
+                        <span class="tech-badge">HLS / DASH</span>
+                        <span class="tech-badge">Linux server</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="project-card">
                 <div class="card-carousel">
                     <div class="carousel-slide active">
@@ -267,7 +295,10 @@
                 </div>
                 <div class="project-content">
                     <h3>ERP - GESTOR PARA TIENDAS GOYO</h3>
-                    <p>Sistema gestor completo para la tienda de repuestos de motos Goyo en SJM | administración total del negocio</p>
+                    <p>Software ERP de gestión comercial a medida para SERVIREPUESTOS GOYO. 
+                        Centraliza el control de inventario automatizado, flujo de caja, 
+                        ciclo de ventas, créditos y administración de proveedores en un sistema unificado 
+                        de alta disponibilidad.</p>
                     <div class="project-tech">
                         <span class="tech-badge">React</span>
                         <span class="tech-badge">Node.js</span>
@@ -284,7 +315,6 @@
                 </div>
             </div>
 
-            <!-- Proyecto 2: RESCUEMAL -->
             <div class="project-card">
                 <div class="card-carousel">
                     <div class="carousel-slide mobile-view active">
@@ -339,7 +369,8 @@
                 </div>
                 <div class="project-content">
                     <h3>RESCUEMAL</h3>
-                    <p>Solución móvil diseñada para transformar la realidad de los animales en situación de abandono. Alineada con los Objetivos de Desarrollo Sostenible</p>
+                    <p>Solución móvil diseñada para transformar la realidad de los animales en situación de abandono. 
+                        Alineada con los Objetivos de Desarrollo Sostenible</p>
                     <div class="project-tech">
                         <span class="tech-badge">Kotlin</span>
                         <span class="tech-badge">Java</span>
@@ -353,7 +384,6 @@
                 </div>
             </div>
 
-            <!-- Proyecto 3: Sistema Veterinaria -->
             <div class="project-card">
                 <div class="card-carousel">
                     <div class="carousel-slide active">
@@ -379,7 +409,8 @@
                 </div>
                 <div class="project-content">
                     <h3>Sistema de Gestión Veterinaria</h3>
-                    <p>Sistema completo para gestión de clínica veterinaria con registro de pacientes, control de citas e historiales médicos.</p>
+                    <p>Sistema completo para gestión de clínica veterinaria con registro de pacientes, 
+                        control de citas e historiales médicos.</p>
                     <div class="project-tech">
                         <span class="tech-badge">C#</span>
                         <span class="tech-badge">SQL Server</span>
@@ -393,7 +424,6 @@
                 </div>
             </div>
 
-            <!-- Proyecto 4: Web Veterinaria -->
             <div class="project-card">
                 <div class="card-carousel">
                     <div class="carousel-slide active">
@@ -427,7 +457,8 @@
                 </div>
                 <div class="project-content">
                     <h3>Sitio Web Veterinaria</h3>
-                    <p>Página web informativa para clínica de mascotas con secciones de servicios, contacto y presentación del equipo profesional.</p>
+                    <p>Página web informativa para clínica de mascotas con secciones de servicios, contacto y 
+                        presentación del equipo profesional.</p>
                     <div class="project-tech">
                         <span class="tech-badge">HTML5</span>
                         <span class="tech-badge">CSS3</span>
