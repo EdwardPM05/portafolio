@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-21T00:00:00.000Z",
+  "title": "Design System: Edward Pittman — Portafolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Azul Eléctrico",
+        "canonical": "#007bff",
+        "tonalRamp": ["#001730", "#002c5c", "#004488", "#005fb3", "#007bff", "#3d9aff", "#7ebaff", "#c2ddff"]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Cian Señal",
+        "canonical": "#00bbff",
+        "tonalRamp": ["#001f30", "#00395c", "#005588", "#0074b3", "#00bbff", "#4dceff", "#8fe2ff", "#cdf3ff"]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Negro Terminal",
+        "canonical": "#0a0a0a",
+        "tonalRamp": ["#000000", "#050505", "#0a0a0a", "#141414", "#1f1f1f", "#2b2b2b", "#3a3a3a", "#4a4a4a"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Gris Carbón",
+        "canonical": "#1a1a1a",
+        "tonalRamp": ["#0a0a0a", "#141414", "#1a1a1a", "#242424", "#303030", "#3d3d3d", "#4c4c4c", "#5c5c5c"]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Blanco Cálido",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#4a4a4a", "#6b6b6b", "#8f8f8f", "#b0b0b0", "#cfcfcf", "#e2e2e2", "#f2f2f2", "#ffffff"]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Gris Plomo",
+        "canonical": "#b0b0b0",
+        "tonalRamp": ["#2b2b2b", "#3d3d3d", "#525252", "#696969", "#828282", "#9c9c9c", "#b0b0b0", "#cccccc"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "H1 del hero únicamente." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de sección (Habilidades, Proyectos, Contacto)." },
+      "title": { "displayName": "Title", "purpose": "Título de cada tarjeta de proyecto." },
+      "body": { "displayName": "Body", "purpose": "Párrafos descriptivos, copy largo." },
+      "label": { "displayName": "Label", "purpose": "Badges de tecnología, texto pequeño en mayúscula/peso alto." }
+    },
+    "shadows": [
+      { "name": "glow-card", "value": "0 20px 40px rgba(0, 123, 255, 0.2)", "purpose": "Hover de tarjetas de proyecto y de habilidad." },
+      { "name": "glow-button-primary-rest", "value": "0 10px 30px rgba(0, 123, 255, 0.3)", "purpose": "Botón primario en reposo — único elemento con sombra permanente." },
+      { "name": "glow-button-primary-hover", "value": "0 15px 40px rgba(0, 123, 255, 0.4)", "purpose": "Botón primario en hover." },
+      { "name": "glow-avatar", "value": "0 20px 60px rgba(0, 123, 255, 0.3)", "purpose": "Foto de perfil del hero y su halo animado." },
+      { "name": "glow-focus-field", "value": "0 0 20px rgba(0, 123, 255, 0.2)", "purpose": "Inputs/textarea del formulario de contacto al enfocar." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "all 0.3s ease", "purpose": "Transición por defecto para casi todo hover/focus del sistema." },
+      { "name": "float", "value": "translateY 4s ease-in-out infinite", "purpose": "Flotación sutil de la foto de perfil del hero." },
+      { "name": "pulse", "value": "scale/opacity 3s ease-in-out infinite", "purpose": "Halo animado detrás de la foto de perfil." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "480px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal, pill con gradiente y glow permanente.",
+      "html": "<button class=\"ds-btn-primary\">Contáctame</button>",
+      "css": ".ds-btn-primary { background: linear-gradient(135deg, #007bff 0%, #00bbff 100%); color: #ffffff; padding: 1rem 2.5rem; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3); transition: all 0.3s ease; cursor: pointer; } .ds-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0, 123, 255, 0.4); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "CTA secundario, outline cian que se invierte en hover.",
+      "html": "<button class=\"ds-btn-secondary\">Descargar CV</button>",
+      "css": ".ds-btn-secondary { background: transparent; color: #00bbff; padding: 1rem 2.5rem; border-radius: 50px; border: 2px solid #00bbff; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; cursor: pointer; } .ds-btn-secondary:hover { background: #00bbff; color: #0a0a0a; transform: translateY(-3px); }"
+    },
+    {
+      "name": "Tech Chip",
+      "kind": "chip",
+      "refersTo": "chip-tech",
+      "description": "Badge de tecnología dentro de una tarjeta de proyecto, estático.",
+      "html": "<span class=\"ds-chip-tech\">React</span>",
+      "css": ".ds-chip-tech { display: inline-block; padding: 0.4rem 0.8rem; background: rgba(0, 123, 255, 0.1); border: 1px solid rgba(0, 123, 255, 0.3); border-radius: 5px; font-size: 0.8rem; font-weight: 600; color: #00bbff; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-project",
+      "description": "Tarjeta de proyecto: plana en reposo, elevación + glow azul en hover.",
+      "html": "<div class=\"ds-card-project\"><h3 class=\"ds-card-title\">CONTROLPORTS</h3><p class=\"ds-card-desc\">CLI multiplataforma para Windows que lista y gestiona procesos por puerto.</p></div>",
+      "css": ".ds-card-project { background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); padding: 2rem; transition: all 0.3s ease; } .ds-card-project:hover { transform: translateY(-10px); border-color: #007bff; box-shadow: 0 20px 40px rgba(0, 123, 255, 0.2); } .ds-card-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 1rem; color: #ffffff; } .ds-card-desc { color: #b0b0b0; line-height: 1.6; margin: 0; }"
+    },
+    {
+      "name": "Contact Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Campo de texto del formulario de contacto.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Nombre completo\" />",
+      "css": ".ds-input { width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: #ffffff; font-family: 'Poppins', sans-serif; font-size: 1rem; transition: all 0.3s ease; } .ds-input:focus { outline: none; border-color: #007bff; box-shadow: 0 0 20px rgba(0, 123, 255, 0.2); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Link de navegación con subrayado que crece en hover/activo.",
+      "html": "<a class=\"ds-nav-link ds-nav-link--active\" href=\"#projects\">Proyectos</a>",
+      "css": ".ds-nav-link { position: relative; color: #ffffff; text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.3s ease; } .ds-nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg, #007bff 0%, #00bbff 100%); transition: width 0.3s ease; } .ds-nav-link:hover, .ds-nav-link--active { color: #00bbff; } .ds-nav-link:hover::after, .ds-nav-link--active::after { width: 100%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Terminal Nocturna",
+    "overview": "El sistema es un IDE oscuro que se volvió portafolio: fondo casi negro (#0a0a0a), superficies apenas más claras que las tarjetas de un editor de código, y un único acento —el gradiente azul eléctrico a cian (#007bff → #00bbff)— que actúa como una señal de estado activo, no como decoración de marca. Nada compite con esa señal: el resto de la interfaz es deliberadamente sobrio (texto gris #b0b0b0, bordes hairline al 10% de opacidad) para que el acento azul lea como 'esto está vivo/interactivo' cada vez que aparece. La densidad es generosa, casi editorial: secciones con 6rem de aire vertical, tarjetas de proyecto con mucho padding interno.",
+    "keyCharacteristics": [
+      "Fondo casi negro + tarjetas ligeramente elevadas en tono, nunca blanco puro en ningún elemento.",
+      "Un solo acento de color (gradiente azul→cian) reservado para estados interactivos y jerarquía, no para decoración ambiental.",
+      "Radios generosos en casi todo (10-20px en tarjetas/inputs, pill en botones) — nada usa esquinas rectas salvo el propio carrusel de imágenes.",
+      "Reposo plano, hover con elevación + glow azul difuso — la profundidad es una respuesta al gesto del usuario, no un estado permanente."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "El gradiente azul→cian solo aparece en elementos interactivos o su estado de hover. Nunca se usa como fondo decorativo de una sección completa.", "section": "colors" },
+      { "name": "The Interaction-Only Glow Rule", "body": "El glow azul difuso se reserva para hover/focus, con la única excepción del botón primario, que lo mantiene en reposo para destacarlo como CTA.", "section": "elevation" },
+      { "name": "The Flat-by-Default Rule", "body": "Nada tiene sombra hasta que el usuario interactúa con ello.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reservar el gradiente azul→cian exclusivamente para estados interactivos y CTAs.",
+      "Do mantener el patrón reposo-plano/hover-con-glow en cualquier tarjeta o botón nuevo.",
+      "Do usar radios grandes (10-20px) y pill en botones.",
+      "Do dejar 6rem de aire vertical entre secciones y 2rem de padding interno en tarjetas."
+    ],
+    "donts": [
+      "Don't introducir un segundo color de acento (verde, morado, naranja).",
+      "Don't usar blanco puro como fondo de ninguna superficie.",
+      "Don't usar sombras grises neutras — toda sombra con propósito de profundidad lleva tinte azul.",
+      "Don't rellenar con un placeholder genérico los proyectos sin demo pública."
+    ]
+  }
+}
