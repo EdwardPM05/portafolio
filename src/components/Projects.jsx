@@ -16,7 +16,6 @@ export function Projects() {
       <div className="projects-group">
         <div className="projects-group-title">
           <h3>En Producción</h3>
-          <p>Sistemas que empresas reales usan hoy para operar — no ejercicios de práctica.</p>
         </div>
         <div className="projects-grid projects-grid--featured">
           {produccion.map((p) => (
@@ -28,7 +27,6 @@ export function Projects() {
       <div className="projects-group">
         <div className="projects-group-title">
           <h3>Proyectos Personales y Freelance</h3>
-          <p>Herramientas propias, extensiones y proyectos por encargo.</p>
         </div>
         <div className="projects-grid">
           {personal.map((p) => (

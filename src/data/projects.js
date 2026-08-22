@@ -10,9 +10,9 @@ function imgs(prefix, count, altBase, ext = "png") {
 export const projects = [
   {
     category: "produccion",
-    title: "ERP - GESTOR PARA TIENDAS GOYO",
+    title: "ERP GOYO MOTOR'S",
     description:
-      "Software ERP de gestión comercial a medida para SERVIREPUESTOS GOYO. Centraliza el control de inventario automatizado, flujo de caja, ciclo de ventas, créditos y administración de proveedores en un sistema unificado de alta disponibilidad.",
+      "Software ERP de gestión comercial a medida para GOYO MOTOR'S. Centraliza el control de inventario automatizado, flujo de caja, ciclo de ventas, créditos y administración de proveedores en un sistema unificado de alta disponibilidad.",
     tech: ["React", "Node.js", "Firebase"],
     images: imgs("erp", 10, "ERP Goyo"),
     links: [{ icon: "external", label: "Demo", href: "https://gestor-moto-rep.vercel.app/auth", variant: "demo" }],
@@ -21,7 +21,7 @@ export const projects = [
     category: "produccion",
     title: "APP IPTV - SIMATV",
     description:
-      "Aplicación de IPTV Streaming para Smart TVs con cabecera de televisión (Headend) propia. Implementa ingesta y procesamiento de señales satelitales en vivo (nacional e internacional) optimizadas para servidores Linux, con sistema de autenticación y acceso premium, DESARROLLADO PARA EMPRESA DE TELECOMUNICACIONES SIMA.",
+      "Co-desarrollé para SIMA una app de IPTV para Smart TVs y Android TV, con streaming en vivo de alta disponibilidad, interfaz pensada para control remoto (D-pad) y reproducción HLS/DASH de baja latencia. Diseñé la arquitectura de gestión de listas de canales, integré la sincronización de la Guía Electrónica de Programación (EPG) y optimicé el rendimiento para una reproducción estable incluso en TVs con hardware limitado.",
     tech: ["Kotlin", "Exoplayer", "IPTV / Live TV", "HLS / DASH", "Linux server"],
     images: imgs("simatv", 4, "SIMATV"),
     links: [],
@@ -31,7 +31,7 @@ export const projects = [
     category: "produccion",
     title: "NOVA SMART - SITIO WEB CORPORATIVO",
     description:
-      "Sitio web corporativo oficial de Nova Smart (Distribuidor Autorizado Claro), con catálogo de más de 37 planes de Fibra Óptica FTTH/HFC, galería de equipo, formulario de contacto comercial y bolsa de trabajo con postulación.",
+      "Landing page corporativa de Nova Smart (Distribuidor Autorizado Claro) para promocionar la empresa: catálogo de servicios y planes de Fibra Óptica FTTH/HFC, canal de ventas, coordinación de instalaciones, bolsa de trabajo para reclutamiento de personal y promoción general de la marca.",
     tech: ["Astro", "TypeScript", "CSS3"],
     images: imgs("novasmart", 6, "Nova Smart Web"),
     links: [],
@@ -41,7 +41,7 @@ export const projects = [
     category: "produccion",
     title: "NOVA SMART - APP MÓVIL EMPRESARIAL",
     description:
-      "Aplicación móvil empresarial para gestión de operaciones de telecomunicaciones: ventas, instalaciones, almacén, auditorías con firma digital y PDF, asistencia con cámara y usuarios con permisos por rol y área.",
+      "Aplicación móvil empresarial para gestión de operaciones de telecomunicaciones: ventas, instalaciones, almacén, auditorías con firma digital, asistencia con cámara y usuarios con permisos por rol y área.",
     tech: ["Expo / React Native", "TypeScript", "Supabase"],
     images: imgs("novasmartapp", 16, "Nova Smart App", "jpg"),
     mobileView: true,
@@ -137,6 +137,16 @@ export const projects = [
     images: imgs("res", 11, "RescueMal", "jpeg"),
     mobileView: true,
     links: [{ icon: "github", label: "Código", href: "https://github.com/EdwardPM05/rescate-animal", variant: "code" }],
+  },
+  {
+    category: "personal",
+    title: "AYNI.PE",
+    description:
+      "Marketplace tipo Uber que conecta clientes con profesionales y freelancers verificados cerca de su ubicación, con doble modo cliente/profesional, geolocalización y verificación de prestadores de servicio. Desarrollado para la feria comercial de la carrera de Administración de la UNTELS.",
+    tech: ["Expo / React Native", "TypeScript", "Firebase"],
+    images: imgs("ayni", 11, "Ayni.pe", "jpeg"),
+    mobileView: true,
+    links: [{ icon: "github", label: "Código", href: "https://github.com/EdwardPM05/Ayni-mobile", variant: "code" }],
   },
   {
     category: "personal",

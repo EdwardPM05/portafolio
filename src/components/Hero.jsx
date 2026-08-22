@@ -8,8 +8,8 @@ export function Hero() {
           </h1>
           <h2>Ingeniero de Software</h2>
           <p>
-            Desarrollador Full Stack. Construyo y mantengo sistemas que empresas reales usan hoy para
-            operar — ERPs, apps móviles corporativas y automatizaciones — no solo ejercicios de portafolio.
+            Desarrollador Full Stack. Me dedico a construir software a medida para empresas —desde ERPs
+            hasta automatizaciones— y me apasiona especialmente el desarrollo móvil.
           </p>
           <div className="hero-buttons">
             <a href="#contact" className="btn btn-primary">
@@ -30,7 +30,7 @@ export function Hero() {
         </div>
         <div className="hero-image">
           <div className="image-container">
-            <img src="images/fot.png" alt="Edward Pittman" />
+            <img src="images/foto-perfil.png" alt="Edward Pittman" />
           </div>
         </div>
       </div>

@@ -27,37 +27,43 @@ export function ProjectCard({ project, featured = false }) {
 
   return (
     <div className={"project-card" + (featured ? " project-card--featured" : "")}>
-      <div className="card-carousel">
-        {project.images.map((img, i) => (
-          <div
-            className={"carousel-slide" + (project.mobileView ? " mobile-view" : "") + (i === slide ? " active" : "")}
-            key={img.src}
-          >
-            {loaded.has(i) ? <img src={img.src} alt={img.alt} loading="lazy" /> : null}
-          </div>
-        ))}
-        <button className="carousel-btn prev" onClick={prev} aria-label="Imagen anterior">
-          <i className="fas fa-chevron-left"></i>
-        </button>
-        <button className="carousel-btn next" onClick={next} aria-label="Imagen siguiente">
-          <i className="fas fa-chevron-right"></i>
-        </button>
-        <div className="carousel-indicators">
+      {count > 0 ? (
+        <div className="card-carousel">
           {project.images.map((img, i) => (
-            <button
+            <div
+              className={"carousel-slide" + (project.mobileView ? " mobile-view" : "") + (i === slide ? " active" : "")}
               key={img.src}
-              type="button"
-              className={"indicator" + (i === slide ? " active" : "")}
-              aria-label={`Ir a imagen ${i + 1} de ${count}`}
-              aria-current={i === slide}
-              onClick={(e) => {
-                e.stopPropagation();
-                goTo(i);
-              }}
-            />
+            >
+              {loaded.has(i) ? <img src={img.src} alt={img.alt} loading="lazy" /> : null}
+            </div>
           ))}
+          {count > 1 ? (
+            <>
+              <button className="carousel-btn prev" onClick={prev} aria-label="Imagen anterior">
+                <i className="fas fa-chevron-left"></i>
+              </button>
+              <button className="carousel-btn next" onClick={next} aria-label="Imagen siguiente">
+                <i className="fas fa-chevron-right"></i>
+              </button>
+              <div className="carousel-indicators">
+                {project.images.map((img, i) => (
+                  <button
+                    key={img.src}
+                    type="button"
+                    className={"indicator" + (i === slide ? " active" : "")}
+                    aria-label={`Ir a imagen ${i + 1} de ${count}`}
+                    aria-current={i === slide}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goTo(i);
+                    }}
+                  />
+                ))}
+              </div>
+            </>
+          ) : null}
         </div>
-      </div>
+      ) : null}
       <div className="project-content">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
