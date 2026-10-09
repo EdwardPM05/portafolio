@@ -41,7 +41,7 @@ export function Header() {
   return (
     <header id="header" className={scrolled ? "abajo" : ""}>
       <nav>
-        <div className="logo">EP</div>
+        <div className="logo">EP · ORDEN N° 002</div>
         <ul className={"nav-links" + (menuOpen ? " active" : "")}>
           {LINKS.map((link) => (
             <li key={link.id}>

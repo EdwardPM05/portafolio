@@ -4,9 +4,8 @@ export function Skills() {
   return (
     <section className="skills" id="skills">
       <div className="section-title">
-        <h1>
-          Mis <span className="highlight">Habilidades</span>
-        </h1>
+        <h1>Habilidades</h1>
+        <p>{skills.length} ítems en inventario</p>
       </div>
 
       <div className="cards_container--habilidades">

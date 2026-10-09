@@ -8,18 +8,18 @@ export function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="section-title">
-        <h2>
-          Proyectos <span className="highlight">Destacados</span>
-        </h2>
+        <h2>Proyectos</h2>
+        <p>{projects.length} folios en el catálogo</p>
       </div>
 
       <div className="projects-group">
         <div className="projects-group-title">
           <h3>En Producción</h3>
+          <p>Sistemas que empresas reales usan hoy para operar</p>
         </div>
         <div className="projects-grid projects-grid--featured">
-          {produccion.map((p) => (
-            <ProjectCard project={p} featured key={p.title} />
+          {produccion.map((p, i) => (
+            <ProjectCard project={p} featured folio={i + 1} total={projects.length} key={p.title} />
           ))}
         </div>
       </div>
@@ -27,10 +27,11 @@ export function Projects() {
       <div className="projects-group">
         <div className="projects-group-title">
           <h3>Proyectos Personales y Freelance</h3>
+          <p>Herramientas propias e iniciativa personal</p>
         </div>
         <div className="projects-grid">
-          {personal.map((p) => (
-            <ProjectCard project={p} key={p.title} />
+          {personal.map((p, i) => (
+            <ProjectCard project={p} folio={produccion.length + i + 1} total={projects.length} key={p.title} />
           ))}
         </div>
       </div>

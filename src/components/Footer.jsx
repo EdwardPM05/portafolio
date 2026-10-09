@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer>
-      <p>&copy; 2025 Edward Pittman | Todos los derechos reservados.</p>
+      <p>&copy; 2026 Edward Pittman — Ingeniero de Software</p>
     </footer>
   );
 }

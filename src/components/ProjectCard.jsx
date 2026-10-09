@@ -6,7 +6,7 @@ const LINK_ICON = {
   external: "fas fa-external-link-alt",
 };
 
-export function ProjectCard({ project, featured = false }) {
+export function ProjectCard({ project, featured = false, folio, total }) {
   const [slide, setSlide] = useState(0);
   const [loaded, setLoaded] = useState(() => new Set([0]));
   const count = project.images.length;
@@ -65,6 +65,12 @@ export function ProjectCard({ project, featured = false }) {
         </div>
       ) : null}
       <div className="project-content">
+        <div className="folio-tag">
+          <span>FOLIO {String(folio).padStart(3, "0")}/{total}</span>
+          <span className={"status" + (project.category === "personal" ? " status-personal" : "")}>
+            {project.category === "personal" ? "Proyecto propio" : "En producción"}
+          </span>
+        </div>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
         <div className="project-tech">

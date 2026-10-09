@@ -1,200 +1,187 @@
 ---
 name: Edward Pittman — Portafolio
-description: Portafolio de ingeniero full-stack con proyectos reales en producción
+description: Portafolio de ingeniero full-stack, como una orden de trabajo de campo ejecutada y verificada
 colors:
-  primary: "#007bff"
-  secondary: "#00bbff"
-  bg: "#0a0a0a"
-  surface: "#1a1a1a"
-  text: "#ffffff"
-  text-muted: "#b0b0b0"
-  success: "#2ecc71"
-  danger: "#ff9da0"
-  danger-bg: "rgba(229, 72, 77, 0.1)"
-  danger-border: "rgba(229, 72, 77, 0.35)"
+  kraft: "#e9e0c9"
+  paper: "#f4efdc"
+  ink: "#20242b"
+  orange: "#c3521f"
+  orange-soft: "rgba(195, 82, 31, 0.1)"
+  green: "#4a6b3f"
+  green-soft: "rgba(74, 107, 63, 0.12)"
+  line: "#b9ad8c"
+  muted: "#6b6450"
+  red: "#a3302a"
+  wsp: "#3aa655"
 typography:
   display:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "3.5rem"
-    fontWeight: 700
-    lineHeight: 1.2
+    fontFamily: "Barlow Condensed, sans-serif"
+    fontSize: "3rem"
+    fontWeight: 800
+    lineHeight: 0.98
   headline:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "2.5rem"
-    fontWeight: 700
-    lineHeight: 1.2
+    fontFamily: "Barlow Condensed, sans-serif"
+    fontSize: "2.1rem"
+    fontWeight: 800
+    lineHeight: 1.1
   title:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "1.5rem"
-    fontWeight: 700
-    lineHeight: 1.3
+    fontFamily: "Barlow Condensed, sans-serif"
+    fontSize: "1.3rem"
+    fontWeight: 800
+    lineHeight: 1.2
+  kicker:
+    fontFamily: "Special Elite, cursive"
+    fontSize: "1.05rem"
+    fontWeight: 400
+    letterSpacing: "0.03em"
   body:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "1.1rem"
-    fontWeight: 400
-    lineHeight: 1.8
-  label:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "0.8rem"
+    fontFamily: "Barlow Condensed, sans-serif"
+    fontSize: "1.08rem"
+    fontWeight: 500
+    lineHeight: 1.6
+  mono-label:
+    fontFamily: "JetBrains Mono, monospace"
+    fontSize: "0.78rem"
     fontWeight: 600
-    letterSpacing: "normal"
-  caption:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "0.9rem"
-    fontWeight: 400
-    lineHeight: 1.5
+    letterSpacing: "0.06em"
+  mono-body:
+    fontFamily: "JetBrains Mono, monospace"
+    fontSize: "0.85rem"
+    fontWeight: 700
 rounded:
-  sm: "5px"
-  md: "10px"
-  lg: "20px"
-  pill: "50px"
-  full: "50%"
+  none: "0"
 spacing:
   sm: "0.5rem"
   md: "1rem"
-  lg: "1.5rem"
-  xl: "2rem"
-  2xl: "2.5rem"
-  section-y: "6rem"
+  lg: "1.6rem"
+  xl: "2.4rem"
+  section-y: "5rem"
 components:
   button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.text}"
-    rounded: "{rounded.pill}"
-    padding: "1rem 2.5rem"
-  button-secondary:
-    backgroundColor: "transparent"
-    textColor: "{colors.secondary}"
-    rounded: "{rounded.pill}"
-    padding: "1rem 2.5rem"
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+    border: "2px solid {colors.ink}"
+    padding: "0.85rem 1.6rem"
+  button-whatsapp:
+    backgroundColor: "{colors.wsp}"
+    textColor: "#ffffff"
+    border: "2px solid {colors.wsp}"
+    padding: "0.85rem 1.6rem"
   card-project:
-    backgroundColor: "rgba(255,255,255,0.03)"
-    rounded: "{rounded.lg}"
-    padding: "2rem"
+    backgroundColor: "{colors.kraft}"
+    border: "2px solid {colors.ink}"
+    rounded: "none"
   chip-tech:
-    backgroundColor: "rgba(0,123,255,0.1)"
-    textColor: "{colors.secondary}"
-    rounded: "{rounded.sm}"
-    padding: "0.4rem 0.8rem"
+    backgroundColor: "{colors.orange-soft}"
+    textColor: "{colors.orange}"
+    border: "1px solid rgba(195,82,31,0.35)"
+    rounded: "none"
 ---
 
 # Design System: Edward Pittman — Portafolio
 
 ## Overview
 
-**Creative North Star: "Terminal Nocturna"**
+**Creative North Star: "Orden de trabajo de campo"**
 
-El sistema es un IDE oscuro que se volvió portafolio: fondo casi negro (#0a0a0a), superficies apenas más claras que las tarjetas de un editor de código, y un único acento —el gradiente azul eléctrico a cian (#007bff → #00bbff)— que actúa como una señal de estado activo, no como decoración de marca. Nada compite con esa señal: el resto de la interfaz es deliberadamente sobrio (texto gris #b0b0b0, bordes hairline al 10% de opacidad) para que el acento azul lea como "esto está vivo/interactivo" cada vez que aparece.
+El portafolio se lee como una orden de trabajo técnica, no como una tarjeta de presentación: cada proyecto es un folio numerado, con su estado sellado "completado y verificado". El sistema reemplaza el fondo negro con gradiente azul-cian (el aspecto más genérico y reconocible de "developer portfolio hecho con IA") por papel kraft, tinta casi negra y un único acento naranja-óxido, con el verde reservado exclusivamente para "en producción" y WhatsApp.
 
-La densidad es generosa, casi editorial: secciones con 6rem de aire vertical, tarjetas de proyecto con mucho padding interno. Nada se siente apretado, a pesar de que el catálogo tiene 16 proyectos con conteos de imágenes muy dispares (3 a 16 capturas).
+La ficha de trabajo (`.hero-sheet`, `.contact-sheet`, cada `.project-card`) es el componente que organiza todo: doble borde o borde grueso, un kicker a máquina de escribir (Special Elite), folios y datos tabulares en monoespaciada (JetBrains Mono), y títulos en bloque condensado (Barlow Condensed). Nada tiene esquinas redondeadas ni sombra de glow — la profundidad, cuando existe, es un desplazamiento duro de 6px en el acento naranja al hacer hover sobre una tarjeta de proyecto, como si la ficha se despegara del papel debajo.
 
 **Key Characteristics:**
-- Fondo casi negro + tarjetas ligeramente elevadas en tono, nunca blanco puro en ningún elemento.
-- Un solo acento de color (gradiente azul→cian) reservado para estados interactivos y jerarquía, no para decoración ambiental.
-- Radios generosos en casi todo (10-20px en tarjetas/inputs, pill en botones) — nada usa esquinas rectas salvo el propio carrusel de imágenes.
-- Reposo plano, hover con elevación + glow azul difuso — la profundidad es una respuesta al gesto del usuario, no un estado permanente.
+- Fondo kraft con textura sutil de rayado horizontal (papel), nunca negro ni blanco puro.
+- Un único acento naranja-óxido para CTA/estados activos; verde reservado solo para "en producción" y WhatsApp — nunca decorativo.
+- Cero radios de borde en todo el sistema; bordes de 1-3px, dobles en los encabezados de ficha.
+- Sello circular rotado (`.stamp`) como firma de "trabajo verificado"; aparece una sola vez, en el hero.
+- Reposo plano; hover en tarjetas de proyecto es un desplazamiento duro con sombra sólida de color, no un glow difuso.
 
 ## Colors
 
-Paleta de un solo acento sobre una base casi monocroma: todo el color vivo del sistema vive en el par azul→cian, y su trabajo es señalar interactividad.
-
 ### Primary
-- **Azul Eléctrico** (`#007bff`): ancla del gradiente de acento; aparece en bordes de hover, sombras de glow, y como primer stop de `--accent-gradient`.
-- **Cian Señal** (`#00bbff`): segundo stop del gradiente; también el color de texto de botones secundarios, links de código y badges de tecnología — es el tono que se usa cuando el azul necesita leerse sobre fondo oscuro sin gradiente.
+- **Naranja-óxido** (`#c3521f`): único acento del sistema — CTA primario al hover, bordes de hover en tarjetas, chips de tecnología, kicker de folio.
+- **Verde** (`#4a6b3f` / botón WhatsApp `#3aa655`): exclusivo para el estado "en producción" (punto de estado) y el canal de contacto por WhatsApp. Nunca se usa como decoración.
 
 ### Neutral
-- **Negro Terminal** (`#0a0a0a`): fondo base de toda la página (`--dark-bg`).
-- **Gris Carbón** (`#1a1a1a`): superficie de tarjetas, secciones alternas y el contenedor del formulario de contacto (`--dark-card`).
-- **Blanco Cálido** (`#ffffff`): texto principal, títulos, iconografía activa (`--text-light`).
-- **Gris Plomo** (`#b0b0b0`): texto secundario/descriptivo — subtítulos, párrafos, copy de proyectos (`--text-gray`).
+- **Kraft** (`#e9e0c9`): fondo base de toda la página.
+- **Papel** (`#f4efdc`): superficie de fichas (hero, tarjetas de proyecto, contacto) — más claro que el kraft de fondo.
+- **Tinta** (`#20242b`): texto principal, bordes, botón primario.
+- **Línea** (`#b9ad8c`) / **Apagado** (`#6b6450`): bordes internos de ficha y texto secundario/kicker mono.
 
-### Semantic (estado de formulario)
-- **Verde Confirmación** (`#2ecc71`): ícono de éxito del formulario de contacto tras un envío correcto — único uso de verde en todo el sistema, reservado exclusivamente a esta confirmación.
-- **Rojo Error** (`rgba(229, 72, 77, 0.1)` fondo / `#ff9da0` texto): caja de error del formulario de contacto cuando falla el envío.
+### Semantic
+- **Rojo** (`#a3302a`): reservado, sin uso activo en el build actual (heredado de la paleta de campo para un futuro estado de error/privado si se necesita).
 
 ### Named Rules
-**The One Accent Rule.** El gradiente azul→cian solo aparece en elementos interactivos o su estado de hover (botones, links, bordes de tarjeta al pasar el mouse, indicador de sección activa). Nunca se usa como fondo decorativo de una sección completa. Los colores semánticos de éxito/error del formulario son la única excepción documentada — señalan estado del sistema, no marca.
+**The Stamp-Once Rule.** El sello circular "completado y verificado" aparece una sola vez, en el hero — no se repite en cada tarjeta de proyecto, donde el estado se comunica en cambio con un punto de color + texto (`.folio-tag .status`).
+
+**The Production-Green Rule.** El verde está reservado exclusivamente a "en producción" y al canal de WhatsApp. Un proyecto personal usa el punto naranja ("Proyecto propio"), nunca verde.
 
 ## Typography
 
-**Display/Body Font:** Poppins (con fallback `sans-serif`), pesos 300 a 800 cargados.
-
-**Character:** Una sola familia geométrica y redondeada para todo el sitio — sin mezcla de fuentes serif/mono. La jerarquía se construye por tamaño y peso, no por cambio de tipografía.
+**Títulos:** Barlow Condensed, peso 700-800, mayúsculas, condensado — bloque de texto que se lee como un sello de goma.
+**Kicker/firma:** Special Elite (máquina de escribir) — exclusivo para el renglón superior de cada ficha ("Orden de trabajo — ficha técnica").
+**Datos tabulares:** JetBrains Mono — folios, estados, chips de tecnología, botones, navegación. Todo lo que es "dato" en vez de "título" vive en esta familia.
 
 ### Hierarchy
-- **Display** (700, 3.5rem, line-height 1.2): el `<h1>` del hero, "Hola, soy Edward Pittman".
-- **Headline** (700, 2.5rem, line-height 1.2): títulos de sección ("Mis Habilidades", "Proyectos Destacados", "¡Hablemos!").
-- **Title** (700, 1.5rem): título de cada tarjeta de proyecto (`<h3>`).
-- **Body** (400, 1.1rem, line-height 1.8): párrafos descriptivos del hero y de "about"; line-height alto intencional para bloques largos de texto.
-- **Label** (600, 0.8rem): `tech-badge` — nombres de tecnología dentro de cada tarjeta de proyecto.
-- **Caption** (400, 0.9rem): texto auxiliar de menor jerarquía — descripción de grupo de proyectos (`projects-group-title p`), nota de proyecto privado (`project-private-note`) y mensaje de error del formulario (`form-error`). Antes de esta pasada de pulido existían tres variantes sueltas (0.85rem/0.95rem) para el mismo rol; se consolidaron en un único tamaño.
+- **Display** (800, 3rem): `<h1>` del hero, "Edward Pittman".
+- **Headline** (800, 2.1rem): títulos de sección ("Habilidades", "Proyectos", "¿Hablamos?").
+- **Title** (800, 1.3rem): título de cada ficha de proyecto.
+- **Kicker** (Special Elite, 1.05rem): logo del header y renglón superior de cada ficha.
+- **Body** (500, 1.08rem): párrafos descriptivos.
+- **Mono label** (700, 0.78rem, mayúsculas): kicker de folio, labels de sección, estado de proyecto.
+- **Mono body** (700, 0.85rem): botones, chips de tecnología, navegación.
 
 ## Layout
 
-Contenedor máximo de 1400px centrado, con padding lateral de `5%` en casi todas las secciones (en vez de un valor fijo en px), y `6rem` de padding vertical por sección — el ritmo vertical es consistente entre Hero, Skills, Projects y Contact.
+Contenedor máximo de 1400px, padding lateral 5%, `5rem` de ritmo vertical entre secciones.
 
-- **Hero:** grid de 2 columnas (`1fr 1fr`) que colapsa a 1 columna centrada en ≤1024px.
-- **Skills:** grid único `auto-fit, minmax(150px, 1fr)` con los 31 íconos juntos (sin agrupar por categoría — decisión explícita del usuario) — se reacomoda solo, sin breakpoints manuales hasta 768px donde el mínimo baja a 120px.
-- **Projects:** grid `auto-fit, minmax(350px, 1fr)` — de 3-4 columnas en desktop a 1 columna en móvil (≤768px).
-- **Header:** fijo (`position: fixed`), fondo negro semitransparente con `backdrop-filter: blur(10px)`; gana una sombra azul sutil (`header.abajo`) después de 50px de scroll.
-- **Menú móvil:** por debajo de 768px, el nav colapsa a un panel fullscreen deslizante (`left: -100%` → `left: 0`) en vez de un dropdown.
+- **Hero:** grid 2 columnas (ficha de trabajo + foto en marco romboidal), colapsa a 1 columna en ≤1024px.
+- **Skills:** grilla de celdas con borde compartido (`auto-fit, minmax(150px,1fr)`), como una tabla de inventario — sin gap, los bordes se solapan en -1px.
+- **Projects:** grid `auto-fit, minmax(340px,1fr)` (destacados `minmax(460px,1fr)`), 1 columna en ≤768px.
+- **Header:** fijo, fondo kraft semitransparente con blur, borde grueso inferior; sombra sutil tras 50px de scroll.
+- **Menú móvil:** panel fullscreen deslizante (`left:-100%` → `left:0`) en ≤768px.
 
 ## Elevation & Depth
 
-Sistema plano en reposo, con elevación como respuesta al gesto (**The Flat-by-Default Rule**: nada tiene sombra hasta que el usuario interactúa con ello). El hover combina dos señales a la vez: un `translateY(-10px)` que levanta físicamente el elemento, y un glow difuso coloreado con el acento primario — nunca una sombra gris neutra.
-
-### Shadow Vocabulary
-- **Glow de tarjeta** (`box-shadow: 0 20px 40px rgba(0, 123, 255, 0.2)`): hover de `.project-card` y `.cards--habilidades`.
-- **Glow de botón primario** (`box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3)`, sube a `0 15px 40px rgba(0, 123, 255, 0.4)` en hover): siempre presente en reposo para el botón primario (es la única sombra "en reposo" del sistema — marca el CTA principal).
-- **Glow de avatar/imagen de perfil** (`box-shadow: 0 20px 60px rgba(0, 123, 255, 0.3)`): la foto de perfil del hero, más un halo `blur(40px)` animado detrás (`@keyframes pulse`).
-- **Glow de foco de formulario** (`box-shadow: 0 0 20px rgba(0, 123, 255, 0.2)`): inputs/textarea al enfocar, junto con borde azul.
+Sistema plano en reposo. El único gesto de profundidad es el hover de `.project-card`: desplazamiento duro `translate(-3px,-3px)` + sombra sólida sin desenfoque (`6px 6px 0 var(--orange)`) — como si la ficha de papel se levantara y proyectara su propio borde, no una sombra realista.
 
 ### Named Rules
-**The Interaction-Only Glow Rule.** El glow azul difuso se reserva para hover/focus (con la única excepción del botón primario, que lo mantiene en reposo para destacarlo como CTA). Ningún elemento estático de layout usa glow.
+**The Hard-Shadow Rule.** Ninguna sombra en el sistema lleva `blur`. Toda sombra es un desplazamiento sólido de color, nunca un glow difuso.
 
 ## Shapes
 
-Radios generosos y consistentes: `5px` para chips pequeños (`tech-badge`), `10px` para botones de acción de tarjeta y campos de formulario, `20px` para tarjetas/contenedores grandes, `50px`/pill para botones de llamada a la acción, y `50%` para todo lo circular (avatar, botones de carrusel, indicadores, el botón flotante de scroll-top). Bordes: hairline de 1px en `rgba(255,255,255,0.1)` sobre casi toda superficie con borde — nunca un borde sólido de color salvo en botones secundarios/outline.
+Cero radios en todo el sistema (`border-radius: 0` implícito, sin excepciones salvo el sello circular y los botones del carrusel/scroll-top, que son círculos por función, no decoración). Bordes de 1-3px en tinta; el header de cada ficha usa `border-bottom: 3px double`.
 
 ## Components
 
 ### Buttons
-- **Shape:** pill completo (`border-radius: 50px`).
-- **Primary:** gradiente de acento de fondo, texto blanco, glow azul permanente en reposo que se intensifica y el botón sube `-3px` en hover.
-- **Secondary/Ghost:** fondo transparente, borde de 2px en cian, texto cian; en hover se invierte a fondo cian sólido con texto casi negro (`--dark-bg`).
+- **Shape:** rectos, sin radio, borde de 2px.
+- **Primary:** fondo tinta, texto papel; hover vira a naranja sólido.
+- **WhatsApp:** fondo y borde verde-wsp (`#3aa655`) de punta a punta — es el único botón con color de marca propio en reposo, porque es el canal de contacto real.
 
 ### Chips (`tech-badge`)
-- **Style:** fondo azul al 10% de opacidad, borde azul al 30%, texto cian, radio 5px, tipografía label (0.8rem/600).
-- **State:** estático, no interactivo — es información, no un control.
+- Fondo naranja al 10%, borde naranja al 35%, texto naranja, mono 0.72rem, sin radio.
 
-### Cards / Containers (`project-card`, `cards--habilidades`)
-- **Corner Style:** 20px.
-- **Background:** `rgba(255,255,255,0.03)` (project-card) o `--dark-card` sólido (skill card) — ambas casi indistinguibles del fondo en reposo.
-- **Shadow Strategy:** plano en reposo; glow azul + elevación -10px en hover (ver Elevation & Depth).
-- **Border:** hairline 1px, se vuelve azul primario sólido en hover.
-- **Internal Padding:** 2rem (project-content) / `2rem 1.5rem` (skill card).
+### Cards (`project-card`)
+- Fondo kraft, borde tinta 2px, sin radio.
+- Folio + estado en la cabecera de contenido (`folio-tag`): punto verde "En producción" o punto naranja "Proyecto propio".
+- Hover: desplazamiento duro + sombra sólida naranja (ver Elevation & Depth).
 
-### Inputs / Fields
-- **Style:** fondo `rgba(255,255,255,0.05)`, borde hairline, radio 10px.
-- **Focus:** borde azul + glow (`0 0 20px rgba(0,123,255,0.2)`), sin cambio de fondo.
+### Carrusel de proyecto (heredado, restyleado)
+Mismo mecanismo de antes (slides con cross-fade, sin librería externa): fondo de respaldo ahora es un rayado diagonal kraft/papel en vez de gradiente azul; botones prev/next circulares con borde tinta; indicadores de punto en tinta/naranja.
 
-### Navigation
-- Links de texto blanco con un subrayado de acento que crece de 0 a 100% de ancho en hover/activo (`::after` con `transform: scaleX()` animado, no `width`, para evitar reflow), en vez de un fondo o pill de selección.
-- Mobile: colapsa a panel fullscreen deslizante, no dropdown.
-
-### Carousel de proyecto (signature component)
-Cada tarjeta de proyecto contiene un carrusel propio (no una librería externa): fondo degradado oscuro de respaldo, slides con `opacity` cruzado (no slide físico), botones circulares prev/next semitransparentes que se iluminan en hover, e indicadores de punto (10px, crecen a 12px cuando están activos). Para proyectos móviles (`mobile-view`), el slide centra la captura en su propio degradado azul tenue con `max-width: 50%` y una sombra dura por debajo, simulando una pantalla de teléfono flotando sobre el fondo de la tarjeta — distinto del tratamiento a pantalla completa que usan los proyectos web.
+### Ficha de contacto
+Reemplaza el formulario por correo (Formspree) por un botón único a WhatsApp (`wa.me`, con mensaje prellenado) — el canal que el usuario realmente revisa. LinkedIn queda como enlace secundario de texto, no como formulario.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** reservar el gradiente azul→cian exclusivamente para estados interactivos y CTAs — es la única señal de color del sistema y pierde fuerza si se usa como decoración.
-- **Do** mantener el patrón reposo-plano/hover-con-glow en cualquier tarjeta o botón nuevo (`The Interaction-Only Glow Rule`).
-- **Do** usar radios grandes (`10-20px`) y pill en botones — es consistente en las 16 tarjetas existentes y en cada sección.
-- **Do** dejar `6rem` de aire vertical entre secciones y `2rem` de padding interno en tarjetas; la densidad generosa es parte de la identidad, no un descuido.
+- **Do** mantener el naranja-óxido como único acento interactivo/CTA — es la señal de marca del sistema.
+- **Do** reservar el verde exclusivamente para "en producción" y WhatsApp.
+- **Do** usar JetBrains Mono para todo dato tabular (folios, estados, botones); Barlow Condensed solo para títulos.
+- **Do** mantener cero radios y sombras duras sin blur en cualquier componente nuevo.
 
 ### Don't:
-- **Don't** introducir un segundo color de acento (verde, morado, naranja) — el sistema depende de tener un único acento reconocible.
-- **Don't** usar blanco puro como fondo de ninguna superficie, ni siquiera tarjetas "elevadas"; el sistema es oscuro de punta a punta.
-- **Don't** usar sombras grises neutras — toda sombra con propósito de profundidad lleva tinte azul (`rgba(0,123,255,...)`).
-- **Don't** rellenar con un placeholder genérico los proyectos sin demo pública (Nova Smart, SIMATV, ERP Goyo) — su ausencia de link es intencional y está documentada en PRODUCT.md.
+- **Don't** introducir un segundo acento de color (azul, cian, morado) — rompe la identidad de ficha de trabajo.
+- **Don't** usar glow difuso en ningún hover — el sistema es plano, con desplazamiento duro como único gesto de profundidad.
+- **Don't** usar el verde como decoración fuera de "en producción"/WhatsApp.
+- **Don't** redondear esquinas de tarjetas, botones o chips.

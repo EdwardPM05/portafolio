@@ -171,9 +171,13 @@ export const projects = [
   {
     category: "personal",
     title: "FORMBLASTER",
-    description: "Herramienta web para el envío y gestión masiva de respuestas/mensajes, construida con Next.js y desplegada en Vercel.",
+    description:
+      "Masificador de respuestas para Google Forms: analiza el payload del formulario para detectar sus campos, permite configurar cada uno con un valor fijo o aleatorio entre varias opciones, y envía las respuestas en modo ráfaga (con delay configurable) o programado (cada N minutos).",
     tech: ["Next.js", "React", "TypeScript"],
     images: imgs("formblaster", 10, "FormBlaster"),
-    links: [{ icon: "external", label: "Demo", href: "https://masificador-de-respuestas.vercel.app", variant: "demo" }],
+    links: [
+      { icon: "external", label: "Demo", href: "https://masificador-de-respuestas.vercel.app", variant: "demo" },
+      { icon: "github", label: "Código", href: "https://github.com/EdwardPM05/Masificador-de-respuestas", variant: "code" },
+    ],
   },
 ];
